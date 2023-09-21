@@ -24,9 +24,9 @@
     <header class="page-header">
       <div class="header-container container">
         <nav>
-          <a class="logo link" href="./index.html">Start Bootstrap</a>
+          <a class="logo link" href="#">Start Bootstrap</a>
         </nav>
-        <a class="link btn" href="./index.html">Sign Up</a>
+        <a class="link btn" href="#signup">Sign Up</a>
       </div>
     </header>
     <main>
@@ -35,40 +35,19 @@
           <h1 class="hero">
             Generate more leads with a professional landing page!
           </h1>
-          <form>
-            <div class="hero-form">
-              <div>
-                <input
-                  class="form-control"
-                  id="emailAddress"
-                  type="email"
-                  placeholder="Email Address"
-                  data-sb-validations="required,email"
-                />
-                <div class="visually-hidden">Email Address is required.</div>
-                <div class="visually-hidden">
-                  Email Address Email is not valid.
-                </div>
-              </div>
-              <div>
-                <button class="form-btn" id="submitButton" type="submit">
-                  Submit
-                </button>
-              </div>
-            </div>
 
-            <div class="visually-hidden" id="submitSuccessMessage">
-              <div class="">
-                <div class="">Form submission successful!</div>
-                <p>To activate this form, sign up at</p>
-                <a
-                  class=""
-                  href="https://startbootstrap.com/solution/contact-forms"
-                  >https://startbootstrap.com/solution/contact-forms</a
-                >
+          <form onsubmit="return false;">
+            <div class="hero-form">
+              <input class="form-control" id="email" type="email" placeholder="Email Address" pattern=".+@gmail\.com" required />
+              <button class="form-btn" id="submitButton" type="submit" onclick="this.style.display='none'">Submit</button>
+              <p class="hidden" id="requiredMsg">Email Address is required. 
+                <br> Email Address is not valid.</p>
+                <p class="hidden" id="succes">Form submission successful! <br> activate this form, sign up at<br>                <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a></p>
               </div>
             </div>
           </form>
+
+
         </div>
       </section>
       <section class="description">
@@ -81,7 +60,8 @@
                 </svg>
                 <h3 class="min-title">Fully Responsive</h3>
                 <p class="text-about">
-                  This theme will look great on any <br>device, no matter the size!
+                  This theme will look great on any <br />device, no matter the
+                  size!
                 </p>
               </div>
             </li>
@@ -92,7 +72,8 @@
                 </svg>
                 <h3 class="min-title">Bootstrap 5 Ready</h3>
                 <p class="text-about">
-                  Featuring the latest build of the new <br>Bootstrap 5 framework!
+                  Featuring the latest build of the new <br />Bootstrap 5
+                  framework!
                 </p>
               </div>
             </li>
@@ -103,8 +84,8 @@
                 </svg>
                 <h3 class="min-title">Easy to Use</h3>
                 <p class="text-about">
-                  Ready to use with your own content, <br>or customize the source
-                  files!
+                  Ready to use with your own content, <br />or customize the
+                  source files!
                 </p>
               </div>
             </li>
@@ -112,41 +93,48 @@
         </div>
       </section>
       <section>
-        <div class="container element">
-          <div class="column">
-                <img src="./images/bg-showcase-1.jpg" alt="">
-            </div>
+        <div class="parent">
+          <div class="element">
+            <div class="column img1"></div>
             <div class="column">
-              <h2>Fully Responsive Design</h2>
-              <p class="lead mb-0">
-                When you use a theme created by Start Bootstrap, you know that
-                the theme will look great on any device, whether it's a phone,
-                tablet, or desktop the page will behave responsively!
-              </p>
+              <div class="column-into">
+                <h2 class="elem-title">Fully Responsive Design</h2>
+                <p class="elem-descr">
+                  When you use a theme created by Start Bootstrap, you know that
+                  the theme will look great on any device, whether it's a phone,
+                  tablet, or desktop the page will behave responsively!
+                </p>
+              </div>
             </div>
+          </div>
+
+          <div class="element">
+            <div class="column img2"></div>
             <div class="column">
-                <img src="./images/bg-showcase-2.jpg" alt="">
+              <div class="column-into">
+                <h2 class="elem-title">Updated For Bootstrap 5</h2>
+                <p class="elem-descr">
+                  Newly improved, and full of great utility classes, Bootstrap 5
+                  is leading the way in mobile responsive web development! All
+                  of the themes on Start Bootstrap are now using Bootstrap 5!
+                </p>
+              </div>
             </div>
+          </div>
+          <div class="element">
+            <div class="column img3"></div>
             <div class="column">
-              <h2>Updated For Bootstrap 5</h2>
-              <p class="lead mb-0">
-                Newly improved, and full of great utility classes, Bootstrap 5
-                is leading the way in mobile responsive web development! All of
-                the themes on Start Bootstrap are now using Bootstrap 5!
-              </p>
+              <div class="column-into">
+                <h2 class="elem-title">Easy to Use & Customize</h2>
+                <p class="elem-descr">
+                  Landing Page is just HTML and CSS with a splash of SCSS for
+                  users who demand some deeper customization options. Out of the
+                  box, just add your content and images, and your new landing
+                  page will be ready to go!
+                </p>
+              </div>
             </div>
-            <div class="column">
-                <img src="./images/bg-showcase-3.jpg" alt="">
-            </div>
-            <div class="column">
-              <h2>Easy to Use & Customize</h2>
-              <p class="lead mb-0">
-                Landing Page is just HTML and CSS with a splash of SCSS for
-                users who demand some deeper customization options. Out of the
-                box, just add your content and images, and your new landing page
-                will be ready to go!
-              </p>
-            </div>
+          </div>
         </div>
       </section>
       <section class="people-container">
@@ -158,30 +146,38 @@
                 <img src="./images/testimonials-1.jpg" alt="..." />
               </div>
               <h5 class="people-title">Margaret E.</h5>
-              <p class="people-text">"This is fantastic! Thanks so much guys!"</p>
+              <p class="people-text">
+                "This is fantastic! Thanks so much guys!"
+              </p>
             </li>
             <li>
               <div class="photo">
                 <img class="" src="./images/testimonials-2.jpg" alt="..." />
               </div>
               <h5 class="people-title">Fred S.</h5>
-              <p class="people-text">"Bootstrap is amazing. I've been using it <br>to create lots of super nice landing <br>pages."</p>
+              <p class="people-text">
+                "Bootstrap is amazing. I've been using it <br />to create lots
+                of super nice landing <br />pages."
+              </p>
             </li>
             <li>
               <div class="photo">
                 <img class="" src="./images/testimonials-3.jpg" alt="..." />
               </div>
               <h5 class="people-title">Sarah W.</h5>
-              <p class="people-text">"Thanks so much for making these free <br>resources available to us!"</p>
+              <p class="people-text">
+                "Thanks so much for making these free <br />resources available
+                to us!"
+              </p>
             </li>
           </ul>
         </div>
       </section>
       <section class="Sign-section">
-        <div class="container">
+        <div class="container sign-bg" id="signup">
           <h2 class="sign-header">Ready to get started? Sign up now!</h2>
           <form>
-            <div class="hero-form">
+            <div class="sign-form">
               <div>
                 <input
                   class="form-control"
@@ -218,45 +214,47 @@
       </section>
     </main>
     <footer class="footer-section">
-      <div class="container">
+      <div class="container footer-cont">
         <div class="footer-container">
           <ul class="site">
-            <li><a href="#!">About</a></li>
-            <li>⋅</li>
-            <li><a href="#!">Contact</a></li>
-            <li>⋅</li>
-            <li><a href="#!">Terms of Use</a></li>
-            <li>⋅</li>
-            <li><a href="#!">Privacy Policy</a></li>
+            <li class="list-inline-item">
+              <a href="#!" class="menu">About</a>
+            </li>
+            <li class="list-inline-item">⋅</li>
+            <li class="list-inline-item">
+              <a href="#!" class="menu">Contact</a>
+            </li>
+            <li class="list-inline-item">⋅</li>
+            <li class="list-inline-item">
+              <a href="#!" class="menu">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">⋅</li>
+            <li class="list-inline-item">
+              <a href="#!" class="menu">Privacy Policy</a>
+            </li>
           </ul>
-          <p class="footer-descr">Your Website 2023. All Rights Reserved.</p>
+          <p class="footer-descr">© Your Website 2023. All Rights Reserved.</p>
         </div>
         <div class="footer-container">
           <ul class="footer-icons-list list">
             <li>
               <a class="footer-link-icons" href="">
-                <svg width="24" height="24">
-                  <use
-                    href="./images/icons/logo.svg#icon-facebook"
-                  ></use>
+                <svg width="26" height="26">
+                  <use href="./images/icons/logo.svg#icon-facebook"></use>
                 </svg>
               </a>
             </li>
             <li>
               <a class="footer-link-icons" href="">
-                <svg width="24" height="24">
-                  <use
-                    href="./images/icons/logo.svg#icon-twitter"
-                  ></use>
+                <svg width="26" height="26">
+                  <use href="./images/icons/logo.svg#icon-twitter"></use>
                 </svg>
               </a>
             </li>
             <li>
               <a class="footer-link-icons" href="">
-                <svg width="24" height="24">
-                  <use
-                    href="./images/icons/logo.svg#icon-instagram"
-                  ></use>
+                <svg width="26" height="26">
+                  <use href="./images/icons/logo.svg#icon-instagram"></use>
                 </svg>
               </a>
             </li>
@@ -264,10 +262,5 @@
         </div>
       </div>
     </footer>
-
-
-
-
-    
   </body>
 </html>
